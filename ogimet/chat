@@ -1,0 +1,17 @@
+Act as Python Developper
+I have a ".txt" file containing weather data "METAR/SPECI, TAF"
+
+I want to extract only METAR/SPECI information in the same for as raw data :
+The require information start after this :
+###################################
+#  METAR/SPECI de FKKD
+###################################
+
+The require information end at the first between these two:
+# No hay TAF CORTOS de FKKD en el periodo solicitado.
+or
+###################################
+#  TAF LARGOS de FKKD
+###################################
+
+The output will be save in a ".txt* file

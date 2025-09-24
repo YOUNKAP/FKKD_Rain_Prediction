@@ -1,0 +1,55 @@
+Act as Python Developper
+I have a ".txt" file containing weather data "METAR/SPECI"
+
+I want to extract the following information:
+1. Time
+2. Wind
+3. Visibility
+4. Temprature
+5. Sea Level Pressure
+6. Rain
+
+For example :
+data : 202103091900 METAR FKKD 091900Z 12014G24KT 090V160 3000 TSRA SQ BKN008 SCT013CB 26/22 Q1007 TEMPO 1400 +TSRA=
+value :
+1. Time : 091900Z
+2. Wind : 12014G24KT
+3. Visibility : 3000
+4. Temprature : 26/22
+5. Sea Level Pressure : Q1007
+6. Rain : YES 
+
+
+
+data : 202305161900 METAR FKKD 161900Z VRB03KT 9999 SCT014 FEW016CB 29/26 Q1010 NOSIG=
+value :
+1. Time : 161900Z
+2. Wind : VRB03KT
+3. Visibility : 9999 
+4. Temprature : 29/26
+5. Sea Level Pressure : Q1010
+6. Rain : NO
+
+
+data : 202308040600 METAR FKKD 040600Z 00000KT 6000 -DZ SCT004 BKN012 FEW015CB 24/24 Q1015 TEMPO 2500 RADZ=
+value :
+1. Time : 040600Z
+2. Wind : 00000KT
+3. Visibility : 6000
+4. Temprature : 24/24
+5. Sea Level Pressure : Q1015
+6. Rain : YES
+
+NOTE:
+Time : First group of character ending with "Z"
+Wind: First group of character ending with  "KT"
+Visibility : First group of 4 digit after Wind
+Temperature : first occurence of this type of string "24/24"
+Sea Level Pressure : First occurence of 5 char starting with "Q"
+Rain : if we have "RA" in the string "YES" eslse : "NO"
+
+Produce the output in the ".csv" format with columns : Time, Wind, Visibility, Temprature, Sea Level Pressure, Rain
+
+Ajust the script so that
+Input : Folder of many ".txt"
+Output : folder of many ".csv"
